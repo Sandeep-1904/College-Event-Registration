@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register for Event</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header><i>Event Registrations</i></header>
+<h1><center><i>Register for the Events</i></center></h1>
+
+  <div class="container">
+    <form method="POST">
+      <label>Your Name:</label>
+      <input type="text" name="name" required>
+
+      <label>Your Email:</label>
+      <input type="email" name="email" required>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</body>
+</html>

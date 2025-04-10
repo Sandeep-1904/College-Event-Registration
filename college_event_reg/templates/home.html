@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Event Registration</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header><i>Event Registrations</i></header>
+<h1><center><i>College Event Registration</i></center></h1>
+  <div class="container">
+    <a href="{{ url_for('create_event') }}"class="link-green">➕ Create New Event</a> |
+<a href="{{ url_for('dashboard') }}">📋 View Registrations</a> |
+<a href="{{ url_for('clear_events') }}" class="link-red"  onclick="return confirm('Are you sure you want to delete all events?')">🗑️ Clear All Events</a>
+
+
+    <h2>Upcoming Events</h2>
+    <ul>
+      {% for event in events %}
+      <li>
+        <h3>{{ event[1] }}</h3>
+        <p>{{ event[2] }}</p>
+        <p><strong>Date:</strong> {{ event[3] }}</p>
+        <a href="{{ url_for('register', event_id=event[0]) }}">Register</a>
+      </li>
+      {% else %}
+      <p>No events available.</p>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <footer>Made by Sandeep 🙌</footer>
+</body>
+</html>

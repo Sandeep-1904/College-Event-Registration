@@ -1,0 +1,11 @@
+open cmd check 
+
+python --version
+
+cd college_event_reg
+
+pip install flask
+
+To run the database/codes use 
+
+python app.py
